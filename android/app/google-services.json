@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "619146772100",
+    "project_id": "watch-store-8c8a4",
+    "storage_bucket": "watch-store-8c8a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619146772100:android:bdfdda93162ecf3abd4cd1",
+        "android_client_info": {
+          "package_name": "com.example.watch_shopping_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgA9ZKei9MwzRjhe3sxnQ_Epzy53OrJ9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
