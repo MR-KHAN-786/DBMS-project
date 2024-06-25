@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> trending = [
+List<Map<String, dynamic>> Men = [
   {
     "product_Name": "Alba",
     "product_pic": "images/re2.jpeg",

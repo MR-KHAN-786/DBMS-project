@@ -1,25 +1,5 @@
-List<Map<String, dynamic>> trending = [
-  {
-    "product_Name": "Alba",
-    "product_pic": "images/re2.jpeg",
-    "product_id": "1",
-    "product_description": "Made in Germany",
-    "product_price": "199",
-  },
-  {
-    "product_Name": "Accurist",
-    "product_pic": "images/re3.jpeg",
-    "product_id": "2",
-    "product_description": "Made in Canada",
-    "product_price": "250",
-  },
-  {
-    "product_Name": "Apple",
-    "product_pic": "images/re4.png",
-    "product_id": "3",
-    "product_description": "Made in Italy",
-    "product_price": "170",
-  },
+List<Map<String, dynamic>> Children= [
+  
   {
     "product_Name": "Brellum",
     "product_pic": "images/re5.png",
@@ -40,6 +20,26 @@ List<Map<String, dynamic>> trending = [
     "product_id": "2",
     "product_description": "Made in Canada",
     "product_price": "250",
+  },{
+    "product_Name": "Alba",
+    "product_pic": "images/re2.jpeg",
+    "product_id": "1",
+    "product_description": "Made in Germany",
+    "product_price": "199",
+  },
+  {
+    "product_Name": "Accurist",
+    "product_pic": "images/re3.jpeg",
+    "product_id": "2",
+    "product_description": "Made in Canada",
+    "product_price": "250",
+  },
+  {
+    "product_Name": "Apple",
+    "product_pic": "images/re4.png",
+    "product_id": "3",
+    "product_description": "Made in Italy",
+    "product_price": "170",
   },
   {
     "product_Name": "Apple",

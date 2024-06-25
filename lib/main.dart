@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:watch_shopping_app/HomeScreen/home_screen.dart';
-import 'package:watch_shopping_app/SplashScreen/splash_screen.dart';
 
 void main() {
   runApp(const MyWatchapp());
