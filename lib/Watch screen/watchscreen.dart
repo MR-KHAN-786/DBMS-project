@@ -4,17 +4,19 @@ import 'package:watch_shopping_app/CartScreen/Cart_screen.dart';
 class WatchScreen extends StatefulWidget {
   final String? id;
   final String? pic;
-  final String? price;
+  final int? price; // Change type to int
   final String? description;
   final String? name;
+  final Function addToCart;
 
   const WatchScreen({
     super.key,
     this.id,
     this.description,
     this.pic,
-    this.price,
+    required this.price, // Required and as an int
     this.name,
+    required this.addToCart,
   });
 
   @override
@@ -22,8 +24,6 @@ class WatchScreen extends StatefulWidget {
 }
 
 class _WatchScreenState extends State<WatchScreen> {
-  int number = 6;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,19 +48,14 @@ class _WatchScreenState extends State<WatchScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Cart_Screen()),
+                MaterialPageRoute(
+                  builder: (context) => Cart_Screen(cartItems: []), // Pass the cartItems here
+                ),
               );
             },
             icon: const Icon(
               Icons.shopping_cart,
               color: Colors.white,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Text(
-              "($number)",
-              style: const TextStyle(fontSize: 25, color: Colors.white),
             ),
           ),
         ],
@@ -91,40 +86,76 @@ class _WatchScreenState extends State<WatchScreen> {
             const SizedBox(height: 10),
             Row(
               children: [
-                Text(
+                const Text(
                   "Price: \$",
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
-                  '${widget.price ?? ''}',
+                  '${widget.price}', // Display price as integer
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w300),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
               ],
             ),
             const SizedBox(height: 10),
             Text(
               widget.description ?? '',
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w300,
+              ),
             ),
-
-
-            SizedBox(height: 50,),
-            TextButton(
-                onPressed: () {},
-                child: Center(
-                  child: Container(
+            const SizedBox(height: 50),
+            GestureDetector(
+              onTap: () {
+                widget.addToCart();
+                Navigator.pop(context); // Go back to the previous screen
+              },
+              child: Center(
+                child: Container(
                   height: 30,
                   width: 150,
-                  decoration: BoxDecoration(color: Colors.white),
-                      child: Center(
-                        child: Row(children: [
-                                            Text("Add to Cart",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),),
-                                            Icon(Icons.shopping_cart,color: Colors.black,size: 20,)
-                                          ]),
-                      )),
-                )),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "Add to Cart",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(width: 5),
+                        Icon(
+                          Icons.shopping_cart,
+                          color: Colors.black,
+                          size: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

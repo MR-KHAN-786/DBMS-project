@@ -3,7 +3,9 @@ import 'package:watch_shopping_app/Watch%20screen/watchscreen.dart';
 import 'package:watch_shopping_app/jsonFile/trendingjson.dart';
 
 class Trending extends StatelessWidget {
-  const Trending({super.key});
+  final Function addToCart;
+
+  const Trending({Key? key, required this.addToCart}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +30,21 @@ class Trending extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: trending.length,
             itemBuilder: (context, index) {
+              final watch = trending[index];
+              int price = int.tryParse(watch["product_price"].toString()) ?? 0;
+
               return GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => WatchScreen(
-                        id: trending[index]["product_id"],
-                        pic: trending[index]["product_pic"],
-                        price: trending[index]["product_price"],
-                        description: trending[index]["product_description"],
-                        name:trending[index]["product_Name"] ,
+                        id: watch["product_id"].toString(),
+                        pic: watch["product_pic"].toString(),
+                        price: price,
+                        description: watch["product_description"].toString(),
+                        name: watch["product_Name"].toString(),
+                        addToCart: () => addToCart(watch),
                       ),
                     ),
                   );
@@ -62,7 +68,7 @@ class Trending extends StatelessWidget {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(15),
                               child: Image.asset(
-                                trending[index]["product_pic"],
+                                watch["product_pic"].toString(),
                                 height: 100,
                                 width: 90,
                                 fit: BoxFit.cover,
@@ -76,7 +82,7 @@ class Trending extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      trending[index]["product_Name"],
+                                      watch["product_Name"].toString(),
                                       style: TextStyle(
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
@@ -87,17 +93,6 @@ class Trending extends StatelessWidget {
                                     Row(
                                       children: [
                                         Text(
-                                          trending[index]["product_price"],
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w300,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
                                           "\$",
                                           style: TextStyle(
                                             fontSize: 15,
@@ -105,10 +100,18 @@ class Trending extends StatelessWidget {
                                             color: Colors.black,
                                           ),
                                         ),
+                                        Text(
+                                          price.toString(),
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w300,
+                                            color: Colors.black,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Text(
-                                      trending[index]["product_description"],
+                                      watch["product_description"].toString(),
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w300,
@@ -122,9 +125,9 @@ class Trending extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Column(mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
                             margin: EdgeInsets.only(right: 20),
@@ -140,11 +143,13 @@ class Trending extends StatelessWidget {
                                 Icons.add,
                                 color: Colors.white,
                               ),
-                              onPressed: () {},
+                              onPressed: () => addToCart(watch),
                             ),
                           ),
-                          Container(margin: EdgeInsets.only(right:15 ),
-                          child: Text("Cart"))
+                          Container(
+                            margin: EdgeInsets.only(right: 15),
+                            child: Text("Cart"),
+                          ),
                         ],
                       ),
                     ],
