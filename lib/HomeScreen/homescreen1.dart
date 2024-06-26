@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:watch_shopping_app/CartScreen/Cart_screen.dart';
 import 'package:watch_shopping_app/HomeScreen/Trending.dart';
 import 'package:watch_shopping_app/HomeScreen/gridview.dart';
-import 'package:watch_shopping_app/Watch%20screen/watchscreen.dart';
 import 'package:watch_shopping_app/jsonFile/Children.dart';
 import 'package:watch_shopping_app/jsonFile/Men.dart';
 import 'package:watch_shopping_app/jsonFile/Women.dart';

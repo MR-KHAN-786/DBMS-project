@@ -125,11 +125,11 @@ class _Cart_ScreenState extends State<Cart_Screen> {
                         },
                       );
                     } else {
-                      // Navigate to Order_Screen
+                      // Navigate to Order_Screen and pass cartItems
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Order_Screen(),
+                          builder: (context) => Order_Screen(cartItems: widget.cartItems),
                         ),
                       );
                     }
