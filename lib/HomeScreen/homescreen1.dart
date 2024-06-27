@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:watch_shopping_app/CartScreen/Cart_screen.dart';
 import 'package:watch_shopping_app/HomeScreen/Trending.dart';
@@ -79,16 +80,18 @@ class _Home_screen1State extends State<Home_screen1> {
     });
   }
 
+
+  void logout(){
+
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: Icon(
-          Icons.account_circle,
-          color: Colors.white,
-          size: 30,
-        ),
+        leading: IconButton(onPressed: logout,  icon: Icon(Icons.logout,color: Colors.white,),),
         title: Text(
           'ASHU    Watch    Store',
           style: TextStyle(
