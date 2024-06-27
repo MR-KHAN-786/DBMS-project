@@ -12,6 +12,26 @@ List<Map<String, dynamic>> trending = [
     "product_id": "2",
     "product_description": "Made in Canada",
     "product_price": 250,
+  }, {
+    "product_Name": "Alba",
+    "product_pic": "images/ww2.jpeg",
+    "product_id": "1",
+    "product_description": "Made in Germany",
+    "product_price": 199,
+  },
+  {
+    "product_Name": "Accurist",
+    "product_pic": "images/ww3.jpeg",
+    "product_id": "2",
+    "product_description": "Made in Canada",
+    "product_price": 250,
+  },
+  {
+    "product_Name": "Alba",
+    "product_pic": "images/ww4.jpeg",
+    "product_id": "1",
+    "product_description": "Made in Germany",
+    "product_price": 199,
   },
   {
     "product_Name": "Apple",

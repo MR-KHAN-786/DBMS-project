@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watch_shopping_app/Authpage/Authpage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:watch_shopping_app/SplashScreen/splash_screen.dart';
 // Import the generated firebase_options.dart
 
 void main() async {
@@ -25,7 +26,7 @@ class MyWatchapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: Splashscreen(),
-      home: Authpage(),
+      home: Splashscreen(),
     );
   }
 }

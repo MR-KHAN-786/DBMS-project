@@ -93,10 +93,10 @@ class _Home_screen1State extends State<Home_screen1> {
         backgroundColor: Colors.black,
         leading: IconButton(onPressed: logout,  icon: Icon(Icons.logout,color: Colors.white,),),
         title: Text(
-          'ASHU    Watch    Store',
+          'ASHU  Watch  Store',
           style: TextStyle(
               color: Colors.white,
-              fontFamily: 'Splash',
+            
               fontSize: 30,
               fontWeight: FontWeight.bold),
         ),
@@ -146,91 +146,93 @@ class _Home_screen1State extends State<Home_screen1> {
 
           //Trending products
           Trending(addToCart: addToCart),
-          Row(
-            children: [
-              SizedBox(width: 10),
-
-              // Category Selection
-
-              GestureDetector(
-                onTap: () {
-                  updateColors(1);
-                  setState(() {
-                    flag = 0;
-                  });
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 35,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: menTapColor,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: menBorderColor, width: 2),
-                  ),
-                  child: Text(
-                    "Men",
-                    style: TextStyle(
-                        color: menTextColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-
-              SizedBox(width: 10),
-              GestureDetector(
-                onTap: () {
-                  updateColors(2);
-                  setState(() {
-                    flag = 1;
-                  });
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 35,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: womenTapColor,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: womenBorderColor, width: 2),
-                  ),
-                  child: Text(
-                    "Women",
-                    style: TextStyle(
-                        color: womenTextColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
+          Expanded(
+            child: Row(
+              children: [
+                SizedBox(width: 10),
+            
+                // Category Selection
+            
+                GestureDetector(
+                  onTap: () {
+                    updateColors(1);
+                    setState(() {
+                      flag = 0;
+                    });
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 35,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: menTapColor,
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: menBorderColor, width: 2),
+                    ),
+                    child: Text(
+                      "Men",
+                      style: TextStyle(
+                          color: menTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(width: 10),
-              GestureDetector(
-                onTap: () {
-                  updateColors(3);
-                  setState(() {
-                    flag = 2;
-                  });
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 35,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: childrenTapColor,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: childrenBorderColor, width: 2),
-                  ),
-                  child: Text(
-                    "Children",
-                    style: TextStyle(
-                        color: childrenTextColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
+            
+                SizedBox(width: 10),
+                GestureDetector(
+                  onTap: () {
+                    updateColors(2);
+                    setState(() {
+                      flag = 1;
+                    });
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 35,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: womenTapColor,
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: womenBorderColor, width: 2),
+                    ),
+                    child: Text(
+                      "Women",
+                      style: TextStyle(
+                          color: womenTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-              ),
-            ],
+                SizedBox(width: 10),
+                GestureDetector(
+                  onTap: () {
+                    updateColors(3);
+                    setState(() {
+                      flag = 2;
+                    });
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 35,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      color: childrenTapColor,
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: childrenBorderColor, width: 2),
+                    ),
+                    child: Text(
+                      "Children",
+                      style: TextStyle(
+                          color: childrenTextColor,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
 
           if (flag == 0)

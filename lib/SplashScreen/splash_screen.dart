@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/animation.dart';
+import 'package:watch_shopping_app/Authpage/Authpage.dart';
 import 'package:watch_shopping_app/login%20screen/login_page.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -74,7 +75,7 @@ class _SplashscreenState extends State<Splashscreen> with TickerProviderStateMix
     );
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) =>LoginPage() ),
+      MaterialPageRoute(builder: (context) =>Authpage() ),
     );
   }
 
